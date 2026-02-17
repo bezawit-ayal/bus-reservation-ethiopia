@@ -1,11 +1,11 @@
-#Bus reservation System(Ethiopia)
+##Bus reservation System(Ethiopia)
 
 this is a simple bus Reservation Systembuilt with 
 **HTML, CSS, JavaScript, PHP ans MySQL^^.
 it allows users to view available buses , book tickets and 
 cancel booking
 
-#Feature 
+##Feature 
 - Admin panel to manage buses and bookings
 - User booking system with confirmation
 - Cancel booking functionality
