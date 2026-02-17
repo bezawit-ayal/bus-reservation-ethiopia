@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Ethiopian Bus Reservation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/bus-reservation-ethiopia/assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/bus-reservation-ethiopia/" class="logo">Ethio<span>Bus</span></a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/bus-reservation-ethiopia/">Home</a></li>
+                <li><a href="/bus-reservation-ethiopia/pages/search.html">Search Bus</a></li>
+                <li><a href="/bus-reservation-ethiopia/pages/about.html">About Us</a></li>
+                <li><a href="/bus-reservation-ethiopia/pages/contact.html">Contact</a></li>
+                <li><a href="/bus-reservation-ethiopia/auth/login.html" class="active">Login</a></li>
+                <li><a href="/bus-reservation-ethiopia/auth/register.html">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <main class="auth-container">
+        <div class="auth-box">
+            <div class="logo text-center">Ethio<span style="color: var(--accent-color);">Bus</span></div>
+            <h2>Welcome Back!</h2>
+            
+            <!-- Alert placeholder for PHP messages -->
+            <div id="alertContainer"></div>
+
+            <form id="loginForm" action="login_action.php" method="POST" onsubmit="return validateLoginForm(event)">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label style="display: flex; align-items: center; gap: 10px; font-weight: normal;">
+                        <input type="checkbox" name="remember" id="remember">
+                        Remember me
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+            </form>
+            
+            <div class="auth-links">
+                <p>Don't have an account? <a href="/bus-reservation-ethiopia/auth/register.html">Register here</a></p>
+                <p style="margin-top: 10px;"><a href="/bus-reservation-ethiopia/admin/login.php">Admin Login</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 EthioBus. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/bus-reservation-ethiopia/assets/js/validation.js"></script>
+</body>
+</html>

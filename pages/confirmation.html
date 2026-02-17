@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmed - Ethiopian Bus Reservation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/bus-reservation-ethiopia/assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/bus-reservation-ethiopia/" class="logo">Ethio<span>Bus</span></a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/bus-reservation-ethiopia/">Home</a></li>
+                <li><a href="/bus-reservation-ethiopia/pages/search.html">Search Bus</a></li>
+                <li><a href="/bus-reservation-ethiopia/pages/about.html">About Us</a></li>
+                <li><a href="/bus-reservation-ethiopia/pages/contact.html">Contact</a></li>
+                <li><a href="/bus-reservation-ethiopia/auth/login.html">Login</a></li>
+                <li><a href="/bus-reservation-ethiopia/auth/register.html">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container" style="padding: 40px 20px;">
+            <div class="confirmation-box card">
+                <!-- Success Icon -->
+                <div class="confirmation-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                
+                <h1 style="color: var(--success-color); margin-bottom: 15px;">Booking Confirmed!</h1>
+                <p style="color: #666; margin-bottom: 30px;">Thank you for booking with EthioBus. Your ticket has been reserved.</p>
+                
+                <!-- Booking Reference -->
+                <div style="background: var(--primary-color); padding: 20px; border-radius: 10px; margin-bottom: 30px;">
+                    <p style="font-size: 14px; margin-bottom: 5px;">Booking Reference</p>
+                    <h2 style="color: var(--accent-color); font-size: 28px;">ETH20260125ABC123</h2>
+                </div>
+                
+                <!-- Booking Details -->
+                <div class="booking-details">
+                    <h3 style="margin-bottom: 20px; color: var(--accent-color);">Booking Details</h3>
+                    
+                    <div class="row">
+                        <span>Passenger Name:</span>
+                        <strong>Abebe Kebede</strong>
+                    </div>
+                    <div class="row">
+                        <span>Phone Number:</span>
+                        <strong>+251 911 234 567</strong>
+                    </div>
+                    <div class="row">
+                        <span>Bus Name:</span>
+                        <strong>Selam Bus (ETH-001)</strong>
+                    </div>
+                    <div class="row">
+                        <span>Route:</span>
+                        <strong>Addis Ababa → Bahir Dar</strong>
+                    </div>
+                    <div class="row">
+                        <span>Travel Date:</span>
+                        <strong>January 25, 2026</strong>
+                    </div>
+                    <div class="row">
+                        <span>Departure Time:</span>
+                        <strong>06:00 AM</strong>
+                    </div>
+                    <div class="row">
+                        <span>Arrival Time:</span>
+                        <strong>03:00 PM</strong>
+                    </div>
+                    <div class="row">
+                        <span>Seat Numbers:</span>
+                        <strong>5, 6</strong>
+                    </div>
+                    <div class="row" style="border-bottom: 2px solid var(--accent-color);">
+                        <span>Total Amount:</span>
+                        <strong style="font-size: 20px; color: var(--success-color);">1,700.00 ETB</strong>
+                    </div>
+                    <div class="row">
+                        <span>Payment Status:</span>
+                        <span class="status-badge status-pending">Pay at Station</span>
+                    </div>
+                    <div class="row">
+                        <span>Booking Status:</span>
+                        <span class="status-badge status-confirmed">Confirmed</span>
+                    </div>
+                </div>
+                
+                <!-- Important Information -->
+                <div style="background: var(--light-gray); padding: 20px; border-radius: 10px; margin-top: 30px; text-align: left;">
+                    <h4 style="color: var(--accent-color); margin-bottom: 15px;">Important Information</h4>
+                    <ul style="list-style: disc; padding-left: 20px; line-height: 1.8; color: #666;">
+                        <li>Please arrive at the bus station at least 30 minutes before departure</li>
+                        <li>Bring a valid ID and this booking confirmation</li>
+                        <li>Payment should be made at the bus station counter</li>
+                        <li>Contact us at +251 911 123 456 for any queries</li>
+                        <li>Cancellation must be made 24 hours before departure</li>
+                    </ul>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <button onclick="window.print()" class="btn btn-primary">
+                        Print Ticket
+                    </button>
+                    <a href="/bus-reservation-ethiopia/booking/my-bookings.php" class="btn btn-secondary">
+                        View My Bookings
+                    </a>
+                    <a href="/bus-reservation-ethiopia/" class="btn btn-outline">
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Station Information -->
+            <div class="card" style="margin-top: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <h3 style="color: var(--accent-color); margin-bottom: 20px;">Departure Station</h3>
+                <div style="display: flex; gap: 20px; align-items: start;">
+                    <div style="flex: 1;">
+                        <h4 style="margin-bottom: 10px;">Addis Ababa - Autobus Tera</h4>
+                        <p style="color: #666; line-height: 1.8;">
+                            Merkato Area, Autobus Tera Bus Station<br>
+                            Look for Selam Bus counter<br>
+                            Platform will be announced at check-in
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 EthioBus. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/validation.js"></script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Ethiopian Bus Reservation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/bus-reservation-ethiopia/assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/bus-reservation-ethiopia/" class="logo">Ethio<span>Bus</span></a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/bus-reservation-ethiopia/">Home</a></li>
+                <li><a href="/bus-reservation-ethiopia/pages/search.html">Search Bus</a></li>
+                <li><a href="/bus-reservation-ethiopia/pages/about.html">About Us</a></li>
+                <li><a href="/bus-reservation-ethiopia/pages/contact.html" class="active">Contact</a></li>
+                <li><a href="/bus-reservation-ethiopia/auth/login.html">Login</a></li>
+                <li><a href="/bus-reservation-ethiopia/auth/register.html">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="padding: 60px 0;">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We're here to help you with any questions</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container" style="padding: 60px 20px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                
+                <!-- Contact Form -->
+                <div class="card">
+                    <h2 style="color: var(--accent-color); margin-bottom: 25px;">Send us a Message</h2>
+                    
+                    <form id="contactForm" action="/bus-reservation-ethiopia/pages/contact.php" method="POST" onsubmit="return validateContactForm(event)">
+                        <div class="form-group">
+                            <label for="contactName">Your Name</label>
+                            <input type="text" id="contactName" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address</label>
+                            <input type="email" id="contactEmail" name="email" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactPhone">Phone Number (Optional)</label>
+                            <input type="tel" id="contactPhone" name="phone" placeholder="e.g., 0911234567">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactSubject">Subject</label>
+                            <select id="contactSubject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="booking">Booking Inquiry</option>
+                                <option value="refund">Refund Request</option>
+                                <option value="complaint">Complaint</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div>
+                    <div class="card mb-30">
+                        <h2 style="color: var(--accent-color); margin-bottom: 25px;">Contact Information</h2>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: var(--primary-color); margin-bottom: 10px;">📍 Head Office</h4>
+                            <p style="line-height: 1.8;">
+                                EthioBus Transport Services<br>
+                                Bole Road, Friendship Building<br>
+                                3rd Floor, Office 305<br>
+                                Addis Ababa, Ethiopia
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: var(--primary-color); margin-bottom: 10px;">📞 Phone Numbers</h4>
+                            <p style="line-height: 1.8;">
+                                Main: +251 911 123 456<br>
+                                Booking: +251 922 234 567<br>
+                                Support: +251 933 345 678
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: var(--primary-color); margin-bottom: 10px;">✉️ Email</h4>
+                            <p style="line-height: 1.8;">
+                                General: info@ethiobus.com<br>
+                                Booking: booking@ethiobus.com<br>
+                                Support: support@ethiobus.com
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 10px;">⏰ Working Hours</h4>
+                            <p style="line-height: 1.8;">
+                                Monday - Friday: 8:00 AM - 6:00 PM<br>
+                                Saturday: 8:00 AM - 4:00 PM<br>
+                                Sunday: 9:00 AM - 2:00 PM<br>
+                                <small>(Ethiopian Time - EAT)</small>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Bus Station Locations -->
+                    <div class="card">
+                        <h3 style="color: var(--accent-color); margin-bottom: 20px;">Bus Station Locations</h3>
+                        
+                        <div style="margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid var(--border-color);">
+                            <h4 style="margin-bottom: 5px;">Addis Ababa (Merkato)</h4>
+                            <p style="font-size: 14px; color: #666;">Autobus Tera, Merkato Area</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid var(--border-color);">
+                            <h4 style="margin-bottom: 5px;">Addis Ababa (Lamberet)</h4>
+                            <p style="font-size: 14px; color: #666;">Lamberet Bus Station</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid var(--border-color);">
+                            <h4 style="margin-bottom: 5px;">Bahir Dar</h4>
+                            <p style="font-size: 14px; color: #666;">Main Bus Terminal, City Center</p>
+                        </div>
+                        
+                        <div>
+                            <h4 style="margin-bottom: 5px;">Hawassa</h4>
+                            <p style="font-size: 14px; color: #666;">Hawassa Bus Station</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <section style="margin-top: 60px;">
+                <div class="section-title">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Find answers to common questions</p>
+                </div>
+                
+                <div class="features-grid" style="grid-template-columns: repeat(2, 1fr);">
+                    <div class="card">
+                        <h4 style="color: var(--accent-color); margin-bottom: 10px;">How do I book a bus ticket?</h4>
+                        <p>Simply search for your route, select your preferred bus and seats, fill in passenger details, and confirm your booking. You'll receive an e-ticket via email.</p>
+                    </div>
+                    <div class="card">
+                        <h4 style="color: var(--accent-color); margin-bottom: 10px;">Can I cancel my booking?</h4>
+                        <p>Yes, you can cancel your booking up to 24 hours before departure. Please contact our support team for cancellation requests.</p>
+                    </div>
+                    <div class="card">
+                        <h4 style="color: var(--accent-color); margin-bottom: 10px;">What payment methods are accepted?</h4>
+                        <p>We accept cash payments at our stations. Online payment options including Telebirr and CBE Birr are coming soon.</p>
+                    </div>
+                    <div class="card">
+                        <h4 style="color: var(--accent-color); margin-bottom: 10px;">How early should I arrive at the station?</h4>
+                        <p>We recommend arriving at least 30 minutes before the scheduled departure time to complete check-in.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>EthioBus</h3>
+                    <p>Your trusted partner for bus travel across Ethiopia. Book safely and travel comfortably.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="search.html">Search Buses</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Email: info@ethiobus.com</li>
+                        <li>Phone: +251 911 123 456</li>
+                        <li>Address: Bole Road, Addis Ababa</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EthioBus. All rights reserved. | Ethiopian Bus Reservation System</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/validation.js"></script>
+</body>
+</html>

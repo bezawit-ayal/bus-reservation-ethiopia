@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Buses - Ethiopian Bus Reservation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/bus-reservation-ethiopia/assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/bus-reservation-ethiopia/" class="logo">Ethio<span>Bus</span></a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/bus-reservation-ethiopia/">Home</a></li>
+                <li><a href="/bus-reservation-ethiopia/pages/search.html" class="active">Search Bus</a></li>
+                <li><a href="/bus-reservation-ethiopia/pages/about.html">About Us</a></li>
+                <li><a href="/bus-reservation-ethiopia/pages/contact.html">Contact</a></li>
+                <li><a href="/bus-reservation-ethiopia/auth/login.html">Login</a></li>
+                <li><a href="/bus-reservation-ethiopia/auth/register.html">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="padding: 50px 0;">
+        <div class="container">
+            <h1>Search Available Buses</h1>
+            <p>Find the best bus for your journey</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container" style="padding: 40px 20px;">
+            
+            <!-- Search Form -->
+            <div class="search-box" style="margin-top: 0;">
+                <form id="searchForm" action="search.php" method="GET" onsubmit="return validateSearchForm(event)">
+                    <div class="search-form">
+                        <div class="form-group">
+                            <label for="origin">From (Departure City)</label>
+                            <select id="origin" name="origin" required>
+                                <option value="">Select Departure City</option>
+                                <option value="Addis Ababa">Addis Ababa</option>
+                                <option value="Bahir Dar">Bahir Dar</option>
+                                <option value="Gondar">Gondar</option>
+                                <option value="Hawassa">Hawassa</option>
+                                <option value="Dire Dawa">Dire Dawa</option>
+                                <option value="Mekelle">Mekelle</option>
+                                <option value="Jimma">Jimma</option>
+                                <option value="Adama">Adama</option>
+                                <option value="Harar">Harar</option>
+                                <option value="Dessie">Dessie</option>
+                                <option value="Axum">Axum</option>
+                                <option value="Arba Minch">Arba Minch</option>
+                                <option value="Gambella">Gambella</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="destination">To (Destination City)</label>
+                            <select id="destination" name="destination" required>
+                                <option value="">Select Destination City</option>
+                                <option value="Addis Ababa">Addis Ababa</option>
+                                <option value="Bahir Dar">Bahir Dar</option>
+                                <option value="Gondar">Gondar</option>
+                                <option value="Hawassa">Hawassa</option>
+                                <option value="Dire Dawa">Dire Dawa</option>
+                                <option value="Mekelle">Mekelle</option>
+                                <option value="Jimma">Jimma</option>
+                                <option value="Adama">Adama</option>
+                                <option value="Harar">Harar</option>
+                                <option value="Dessie">Dessie</option>
+                                <option value="Axum">Axum</option>
+                                <option value="Arba Minch">Arba Minch</option>
+                                <option value="Gambella">Gambella</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="travelDate">Travel Date</label>
+                            <input type="date" id="travelDate" name="travel_date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                Search Buses
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Search Results Section -->
+            <section style="margin-top: 40px;">
+                <h2 style="margin-bottom: 25px; color: var(--accent-color);">Available Buses</h2>
+                <p style="color: #666; margin-bottom: 20px;">Please search for buses using the form above.</p>
+
+                <!-- Sample Bus Results (These would be populated by PHP) -->
+                <div class="bus-list" id="busResults">
+                    
+                    <!-- Sample Bus Card 1 -->
+                    <div class="card bus-card">
+                        <div class="bus-info">
+                            <h3>Selam Bus</h3>
+                            <p><strong>Bus No:</strong> ETH-001</p>
+                            <p><strong>Type:</strong> Luxury</p>
+                            <p><span class="status-badge status-confirmed">45 Seats</span></p>
+                        </div>
+                        <div class="bus-route">
+                            <div class="route-display">
+                                <span class="city">Addis Ababa</span>
+                                <span class="arrow">→</span>
+                                <span class="city">Bahir Dar</span>
+                            </div>
+                            <div class="bus-time">
+                                <div class="time-item">
+                                    <div class="label">Departure</div>
+                                    <div class="value">06:00 AM</div>
+                                </div>
+                                <div class="time-item">
+                                    <div class="label">Arrival</div>
+                                    <div class="value">03:00 PM</div>
+                                </div>
+                                <div class="time-item">
+                                    <div class="label">Duration</div>
+                                    <div class="value">9 hrs</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bus-price">
+                            <div class="price">850.00 <span>ETB</span></div>
+                            <a href="/bus-reservation-ethiopia/pages/seat.html?bus_id=1" class="btn btn-primary">Select Seats</a>
+                        </div>
+                    </div>
+
+                    <!-- Sample Bus Card 2 -->
+                    <div class="card bus-card">
+                        <div class="bus-info">
+                            <h3>Sky Bus</h3>
+                            <p><strong>Bus No:</strong> ETH-002</p>
+                            <p><strong>Type:</strong> Semi-Luxury</p>
+                            <p><span class="status-badge status-confirmed">45 Seats</span></p>
+                        </div>
+                        <div class="bus-route">
+                            <div class="route-display">
+                                <span class="city">Addis Ababa</span>
+                                <span class="arrow">→</span>
+                                <span class="city">Bahir Dar</span>
+                            </div>
+                            <div class="bus-time">
+                                <div class="time-item">
+                                    <div class="label">Departure</div>
+                                    <div class="value">07:00 AM</div>
+                                </div>
+                                <div class="time-item">
+                                    <div class="label">Arrival</div>
+                                    <div class="value">04:00 PM</div>
+                                </div>
+                                <div class="time-item">
+                                    <div class="label">Duration</div>
+                                    <div class="value">9 hrs</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bus-price">
+                            <div class="price">650.00 <span>ETB</span></div>
+                            <a href="/bus-reservation-ethiopia/pages/seat.html?bus_id=2" class="btn btn-primary">Select Seats</a>
+                        </div>
+                    </div>
+
+                    <!-- Sample Bus Card 3 -->
+                    <div class="card bus-card">
+                        <div class="bus-info">
+                            <h3>Abay Bus</h3>
+                            <p><strong>Bus No:</strong> ETH-004</p>
+                            <p><strong>Type:</strong> Luxury</p>
+                            <p><span class="status-badge status-confirmed">45 Seats</span></p>
+                        </div>
+                        <div class="bus-route">
+                            <div class="route-display">
+                                <span class="city">Addis Ababa</span>
+                                <span class="arrow">→</span>
+                                <span class="city">Hawassa</span>
+                            </div>
+                            <div class="bus-time">
+                                <div class="time-item">
+                                    <div class="label">Departure</div>
+                                    <div class="value">08:00 AM</div>
+                                </div>
+                                <div class="time-item">
+                                    <div class="label">Arrival</div>
+                                    <div class="value">12:30 PM</div>
+                                </div>
+                                <div class="time-item">
+                                    <div class="label">Duration</div>
+                                    <div class="value">4.5 hrs</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bus-price">
+                            <div class="price">450.00 <span>ETB</span></div>
+                            <a href="/bus-reservation-ethiopia/pages/seat.html?bus_id=4" class="btn btn-primary">Select Seats</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- No Results Message (Hidden by default) -->
+                <div id="noResults" style="display: none; text-align: center; padding: 50px;">
+                    <h3>No buses found</h3>
+                    <p>Sorry, no buses are available for your selected route and date. Please try a different search.</p>
+                </div>
+            </section>
+
+            <!-- Travel Tips -->
+            <section class="features" style="margin-top: 60px;">
+                <div class="section-title">
+                    <h2>Travel Tips</h2>
+                    <p>Quick advice to ensure a comfortable journey.</p>
+                </div>
+                <div class="card" style="margin-top: 20px;">
+                    <ul style="list-style: disc; padding-left: 20px; line-height: 2; color: var(--text-light);">
+                        <li>Book your tickets in advance, especially during holidays and peak seasons</li>
+                        <li>Arrive at the bus station at least 30 minutes before departure</li>
+                        <li>Carry a valid ID and your booking confirmation</li>
+                        <li>Pack light and keep valuables with you during the journey</li>
+                        <li>Luxury buses offer more comfort for long journeys</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>EthioBus</h3>
+                    <p>Your trusted partner for bus travel across Ethiopia.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/bus-reservation-ethiopia/">Home</a></li>
+                        <li><a href="/bus-reservation-ethiopia/pages/search.html">Search Buses</a></li>
+                        <li><a href="/bus-reservation-ethiopia/pages/about.html">About Us</a></li>
+                        <li><a href="/bus-reservation-ethiopia/pages/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Email: info@ethiobus.com</li>
+                        <li>Phone: +251 911 123 456</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EthioBus. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/bus-reservation-ethiopia/assets/js/validation.js"></script>
+</body>
+</html>

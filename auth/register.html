@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Ethiopian Bus Reservation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/bus-reservation-ethiopia/assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/bus-reservation-ethiopia/" class="logo">Ethio<span>Bus</span></a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/bus-reservation-ethiopia/">Home</a></li>
+                <li><a href="/bus-reservation-ethiopia/pages/search.html">Search Bus</a></li>
+                <li><a href="/bus-reservation-ethiopia/pages/about.html">About Us</a></li>
+                <li><a href="/bus-reservation-ethiopia/pages/contact.html">Contact</a></li>
+                <li><a href="/bus-reservation-ethiopia/auth/login.html">Login</a></li>
+                <li><a href="/bus-reservation-ethiopia/auth/register.html" class="active">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Registration Form -->
+    <main class="auth-container">
+        <div class="auth-box">
+            <div class="logo text-center">Ethio<span style="color: var(--accent-color);">Bus</span></div>
+            <h2>Create Account</h2>
+            
+            <!-- Alert placeholder for PHP messages -->
+            <div id="alertContainer"></div>
+
+            <form id="registrationForm" action="register_action.php" method="POST" onsubmit="return validateRegistrationForm(event)">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="full_name" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="e.g., 0911234567" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Minimum 6 characters" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirm_password" placeholder="Confirm your password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label style="display: flex; align-items: center; gap: 10px; font-weight: normal;">
+                        <input type="checkbox" name="terms" id="terms" required>
+                        I agree to the <a href="#" style="color: var(--secondary-color);">Terms & Conditions</a>
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Register</button>
+            </form>
+            
+            <div class="auth-links">
+                <p>Already have an account? <a href="/bus-reservation-ethiopia/auth/login.html">Login here</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 EthioBus. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/bus-reservation-ethiopia/assets/js/validation.js"></script>
+</body>
+</html>

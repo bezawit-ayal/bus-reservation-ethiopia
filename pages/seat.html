@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Seats - Ethiopian Bus Reservation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/bus-reservation-ethiopia/assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/bus-reservation-ethiopia/" class="logo">Ethio<span>Bus</span></a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/bus-reservation-ethiopia/">Home</a></li>
+                <li><a href="/bus-reservation-ethiopia/pages/search.html">Search Bus</a></li>
+                <li><a href="/bus-reservation-ethiopia/pages/about.html">About Us</a></li>
+                <li><a href="/bus-reservation-ethiopia/pages/contact.html">Contact</a></li>
+                <li><a href="/bus-reservation-ethiopia/auth/login.html">Login</a></li>
+                <li><a href="/bus-reservation-ethiopia/auth/register.html">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container" style="padding: 40px 20px;">
+            <h1 style="text-align: center; color: var(--accent-color); margin-bottom: 10px;">Select Your Seats</h1>
+            <p style="text-align: center; color: #666; margin-bottom: 40px;">Choose your preferred seats for the journey</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                
+                <!-- Bus Layout -->
+                <div class="card">
+                    <h3 style="text-align: center; margin-bottom: 20px; color: var(--accent-color);">Bus Seating Layout</h3>
+                    
+                    <div class="bus-layout">
+                        <div class="bus-front">
+                            <strong>FRONT (Driver)</strong>
+                        </div>
+                        
+                        <!-- Seat Grid -->
+                        <div class="seat-grid" id="seatGrid" style="grid-template-columns: repeat(5, 1fr); gap: 8px;">
+                            <!-- Row 1 -->
+                            <div class="seat" data-seat="1">1</div>
+                            <div class="seat" data-seat="2">2</div>
+                            <div style="width: 30px;"></div> <!-- Aisle -->
+                            <div class="seat" data-seat="3">3</div>
+                            <div class="seat" data-seat="4">4</div>
+                            
+                            <!-- Row 2 -->
+                            <div class="seat" data-seat="5">5</div>
+                            <div class="seat" data-seat="6">6</div>
+                            <div style="width: 30px;"></div>
+                            <div class="seat" data-seat="7">7</div>
+                            <div class="seat" data-seat="8">8</div>
+                            
+                            <!-- Row 3 -->
+                            <div class="seat" data-seat="9">9</div>
+                            <div class="seat" data-seat="10">10</div>
+                            <div style="width: 30px;"></div>
+                            <div class="seat" data-seat="11">11</div>
+                            <div class="seat" data-seat="12">12</div>
+                            
+                            <!-- Row 4 -->
+                            <div class="seat" data-seat="13">13</div>
+                            <div class="seat" data-seat="14">14</div>
+                            <div style="width: 30px;"></div>
+                            <div class="seat" data-seat="15">15</div>
+                            <div class="seat" data-seat="16">16</div>
+                            
+                            <!-- Row 5 -->
+                            <div class="seat" data-seat="17">17</div>
+                            <div class="seat" data-seat="18">18</div>
+                            <div style="width: 30px;"></div>
+                            <div class="seat" data-seat="19">19</div>
+                            <div class="seat" data-seat="20">20</div>
+                            
+                            <!-- Row 6 -->
+                            <div class="seat" data-seat="21">21</div>
+                            <div class="seat" data-seat="22">22</div>
+                            <div style="width: 30px;"></div>
+                            <div class="seat" data-seat="23">23</div>
+                            <div class="seat" data-seat="24">24</div>
+                            
+                            <!-- Row 7 -->
+                            <div class="seat" data-seat="25">25</div>
+                            <div class="seat" data-seat="26">26</div>
+                            <div style="width: 30px;"></div>
+                            <div class="seat" data-seat="27">27</div>
+                            <div class="seat" data-seat="28">28</div>
+                            
+                            <!-- Row 8 -->
+                            <div class="seat" data-seat="29">29</div>
+                            <div class="seat" data-seat="30">30</div>
+                            <div style="width: 30px;"></div>
+                            <div class="seat" data-seat="31">31</div>
+                            <div class="seat" data-seat="32">32</div>
+                            
+                            <!-- Row 9 -->
+                            <div class="seat" data-seat="33">33</div>
+                            <div class="seat" data-seat="34">34</div>
+                            <div style="width: 30px;"></div>
+                            <div class="seat" data-seat="35">35</div>
+                            <div class="seat" data-seat="36">36</div>
+                            
+                            <!-- Row 10 -->
+                            <div class="seat" data-seat="37">37</div>
+                            <div class="seat" data-seat="38">38</div>
+                            <div style="width: 30px;"></div>
+                            <div class="seat" data-seat="39">39</div>
+                            <div class="seat" data-seat="40">40</div>
+                            
+                            <!-- Row 11 (Back row - 5 seats) -->
+                            <div class="seat" data-seat="41">41</div>
+                            <div class="seat" data-seat="42">42</div>
+                            <div class="seat" data-seat="43">43</div>
+                            <div class="seat" data-seat="44">44</div>
+                            <div class="seat" data-seat="45">45</div>
+                        </div>
+                        
+                        <!-- Seat Legend -->
+                        <div class="seat-legend">
+                            <div class="legend-item">
+                                <div class="legend-color available"></div>
+                                <span>Available</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color selected"></div>
+                                <span>Selected</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color booked"></div>
+                                <span>Booked</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hidden input for booked seats (would be populated by PHP) -->
+                    <input type="hidden" id="bookedSeatsData" value="3,7,12,15,22,28,33,40">
+                </div>
+
+                <!-- Booking Details -->
+                <div>
+                    <!-- Trip Summary -->
+                    <div class="card mb-30">
+                        <h3 style="color: var(--accent-color); margin-bottom: 20px;">Trip Summary</h3>
+                        
+                        <div class="booking-details" style="background: none; padding: 0;">
+                            <div class="row">
+                                <span>Bus Name:</span>
+                                <strong>Selam Bus</strong>
+                            </div>
+                            <div class="row">
+                                <span>Bus Number:</span>
+                                <strong>ETH-001</strong>
+                            </div>
+                            <div class="row">
+                                <span>Route:</span>
+                                <strong>Addis Ababa → Bahir Dar</strong>
+                            </div>
+                            <div class="row">
+                                <span>Travel Date:</span>
+                                <strong id="displayTravelDate">January 25, 2026</strong>
+                            </div>
+                            <div class="row">
+                                <span>Departure:</span>
+                                <strong>06:00 AM</strong>
+                            </div>
+                            <div class="row">
+                                <span>Arrival:</span>
+                                <strong>03:00 PM</strong>
+                            </div>
+                            <div class="row">
+                                <span>Bus Type:</span>
+                                <strong>Luxury</strong>
+                            </div>
+                            <div class="row">
+                                <span>Price per Seat:</span>
+                                <strong>850.00 ETB</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Booking Form -->
+                    <div class="card">
+                        <h3 style="color: var(--accent-color); margin-bottom: 20px;">Passenger Details</h3>
+                        
+                        <form id="bookingForm" action="/bus-reservation-ethiopia/booking/book.php" method="POST" onsubmit="return validateBookingForm(event)">
+                            <!-- Hidden fields -->
+                            <input type="hidden" name="bus_id" value="1">
+                            <input type="hidden" name="travel_date" value="2026-01-25">
+                            <input type="hidden" id="pricePerSeat" value="850">
+                            <input type="hidden" id="selectedSeatsInput" name="seats" value="">
+                            
+                            <div class="form-group">
+                                <label for="passengerName">Passenger Name</label>
+                                <input type="text" id="passengerName" name="passenger_name" placeholder="Enter passenger name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="passengerPhone">Phone Number</label>
+                                <input type="tel" id="passengerPhone" name="passenger_phone" placeholder="e.g., 0911234567" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Selected Seats</label>
+                                <div style="padding: 12px 15px; background: var(--light-gray); border-radius: 8px;">
+                                    <span id="selectedSeatsDisplay">None</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Total Amount</label>
+                                <div style="padding: 12px 15px; background: var(--light-gray); border-radius: 8px; font-size: 24px; font-weight: 700; color: var(--success-color);">
+                                    <span id="totalPrice">0.00 ETB</span>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-success" style="width: 100%; margin-top: 10px;">
+                                Confirm Booking
+                            </button>
+                        </form>
+                        
+                        <p style="text-align: center; margin-top: 15px; font-size: 14px; color: #666;">
+                            <a href="/bus-reservation-ethiopia/pages/search.html">← Back to Search</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 EthioBus. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/validation.js"></script>
+    <script>
+        // Initialize seat selection when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const bookedSeatsData = document.getElementById('bookedSeatsData');
+            if (bookedSeatsData) {
+                const bookedList = bookedSeatsData.value ? bookedSeatsData.value.split(',') : [];
+                initSeatSelection(bookedList);
+            }
+        });
+    </script>
+</body>
+</html>
