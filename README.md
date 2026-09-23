@@ -1,106 +1,44 @@
-## Bus reservation System(Ethiopia)
+# Bus Reservation System - Ethiopia
 
-this is a simple bus Reservation Systembuilt with 
-**HTML, CSS, JavaScript, PHP ans MySQL^^.
-it allows users to view available buses , book tickets and 
-cancel booking
-## Bus reservation System(Ethiopia)
+A simple bus reservation system built with **HTML, CSS, JavaScript, PHP, and MySQL**.
 
-this is a simple bus Reservation Systembuilt with 
-**HTML, CSS, JavaScript, PHP ans MySQL^^.
-it allows users to view available buses , book tickets and 
-cancel booking
+The system allows users to view available buses, book tickets, and manage their bookings. Administrators can manage buses and view customer bookings.
 
-## Feature 
-- Admin panel to manage buses and bookings
-- User booking system with confirmation
-- Cancel booking functionality
-- Database-driven with MySQL
-- Simple responsive interface
+## Features
 
----
+- User bus booking
+- Booking confirmation
+- Cancel booking
+- View available buses
+- Admin panel
+- Manage buses
+- View and manage bookings
+- MySQL database
+- Responsive user interface
 
-## Requirements
+## Technologies
 
-- XAMPP (or any PHP + MySQL server)
-- Web browser (Chrome, Firefox, Edge)
-
----
-
-## Installation
-
-1. **Copy the project folder**  
-   Move `bus-reservation-system` into `C:\xampp\htdocs\`
-
-2. **Import Database**  
-   - Open `phpMyAdmin` (`http://localhost/phpmyadmin`)  
-   - Create a new database (e.g., `bus_system`)  
-   - Import the file `bus-system.sql`
-
-3. **Configure Database Connection**  
-   - Open `config.php`  
-   - Set your MySQL username/password (default: `root` / empty password)
-
-4. **Run the Project**  
-   - Open browser → go to `https://bezawit-ayal.github.io/bus-reservation-ethiopia/pages/home.html`
-
----
-
-## Usage
-
-- User can book tickets via the website  
-- Admin can manage buses, view bookings, and cancel tickets
-
----
-
-## Notes
-
-- Make sure XAMPP Apache & MySQL are running  
-- Tested on PHP 8+ and MySQL 8+
-
-## Feature 
-- Admin panel to manage buses and bookings
-- User booking system with confirmation
-- Cancel booking functionality
-- Database-driven with MySQL
-- Simple responsive interface
-
----
+- HTML5
+- CSS3
+- JavaScript
+- PHP
+- MySQL
+- XAMPP
 
 ## Requirements
 
-- XAMPP (or any PHP + MySQL server)
-- Web browser (Chrome, Firefox, Edge)
+Before running the project, make sure you have:
 
----
+- XAMPP
+- PHP 8+
+- MySQL
+- A modern web browser
 
 ## Installation
 
-1. **Copy the project folder**  
-   Move `bus-reservation-system` into `C:\xampp\htdocs\`
+### 1. Clone or download the project
 
-2. **Import Database**  
-   - Open `phpMyAdmin` (`http://localhost/phpmyadmin`)  
-   - Create a new database (e.g., `bus_system`)  
-   - Import the file `bus-system.sql`
+Place the project inside the XAMPP `htdocs` folder:
 
-3. **Configure Database Connection**  
-   - Open `config.php`  
-   - Set your MySQL username/password (default: `root` / empty password)
-
-4. **Run the Project**  
-   - Open browser → go to `http://localhost/bus-reservation-system/index.html`
-
----
-
-## Usage
-
-- User can book tickets via the website  
-- Admin can manage buses, view bookings, and cancel tickets
-
----
-
-## Notes
-
-- Make sure XAMPP Apache & MySQL are running  
-- Tested on PHP 8+ and MySQL 8+
+```text
+C:\xampp\htdocs\bus-reservation-system
